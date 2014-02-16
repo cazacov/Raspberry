@@ -6,5 +6,10 @@
 var zberry = require('../zberry.js');
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express', status: zberry.status() });
+  var model = {
+      title: 'zBerry',
+      sensorStatus: zberry.sensorStatus(),
+      seesMovement: zberry.seesMovement()
+  }
+  res.render('index', model );
 };
