@@ -3,11 +3,18 @@
  * Module dependencies.
  */
 
+    // libraries
 var express = require('express');
+var zberry = require('./zberry.js');
+
+// Controllers
 var routes = require('./routes');
+var status = require('./routes/status');
+
+// Web server
 var http = require('http');
 var path = require('path');
-var zberry = require('./zberry.js')
+
 
 var app = express();
 
@@ -31,6 +38,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/status', status.getStatus);
 
 zberry.demo();
 
