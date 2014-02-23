@@ -1,9 +1,6 @@
 extends ../includes/layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    section.content
+    div(ng-view)
 
-  p  Sensor status: #{sensorStatus}
-
-  p  I see movement: #{seesMovement}

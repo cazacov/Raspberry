@@ -50,6 +50,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/partials/:partialPath', function(req, res){
+  res.render('partials/' + req.params.partialPath);
+});
+
 app.get('/', routes.index);
 app.get('/status', status.getStatus);
 
