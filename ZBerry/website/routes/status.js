@@ -4,7 +4,7 @@
 
 // Based on http://www.smartjava.org/content/html5-server-sent-events-angularjs-nodejs-and-expressjs
 
-var zberry = require('../zberry.js');
+var zberry = require('../zberry_mock.js');
 
 var openConnections = [];
 

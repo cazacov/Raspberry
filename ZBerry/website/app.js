@@ -5,7 +5,7 @@
 
     // libraries
 var express = require('express');
-var zberry = require('./zberry.js');
+var zberry = require('./zberry_mock.js');
 
 // Controllers
 var routes = require('./routes');

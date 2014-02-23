@@ -3,7 +3,7 @@
  * GET home page.
  */
 
-var zberry = require('../zberry.js');
+var zberry = require('../zberry_mock.js');
 
 exports.index = function(req, res){
   var model = {
