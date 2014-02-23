@@ -4,12 +4,14 @@
  */
 
     // libraries
-var express = require('express');
-var zberry = require('./zberry_mock.js');
+var express = require('express'),
+    stylus = require('stylus');
+
+var zberry = require('./server/zberry_mock.js');
 
 // Controllers
-var routes = require('./routes');
-var status = require('./routes/status');
+var routes = require('./server/routes');
+var status = require('./server/routes/status');
 
 // Web server
 var http = require('http');
@@ -18,9 +20,13 @@ var path = require('path');
 
 var app = express();
 
+function compile(str, path) {
+    return stylus(str).set('filename', path);
+}
+
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'server/views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -30,6 +36,13 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(app.router);
+
+app.use(stylus.middleware(
+    {
+      src:      __dirname + '/public',
+      compile:  compile
+    }
+));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
