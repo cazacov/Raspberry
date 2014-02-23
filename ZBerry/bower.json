@@ -1,0 +1,12 @@
+{
+  "name": "ZBerry",
+  "version": "0.0.0",
+  "description": "\"ZBerry project\"",
+  "authors": [
+    "Victor Cazacov"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "toastr": "~2.0.1"
+  }
+}
