@@ -5,5 +5,8 @@
   "authors": [
     "Victor Cazacov"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "toastr": "~2.0.1"
+  }
 }
